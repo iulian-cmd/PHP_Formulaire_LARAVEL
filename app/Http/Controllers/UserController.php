@@ -34,9 +34,11 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = [
             'user' => [
                 'firstname' => $request->input('firstname'),
+                'lastname' => $request->input('lastname'),
                 'gender' => $request->input('gender'),
                 'newsletter' => $request->input('newsletter'),
                 'mood' => $request->input('mood'),
@@ -44,7 +46,7 @@ class UserController extends Controller
         ];
 
         return view('user.result', $data);
-
+        
     }
 
     /**
@@ -69,6 +71,7 @@ class UserController extends Controller
         //
     }
 
+    
     /**
      * Update the specified resource in storage.
      *
